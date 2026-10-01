@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bosix – Tour cắm trại giải đố</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Be+Vietnam+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#EEF3EF;--surface:#fff;--ink:#12262B;--muted:#4C6168;--pine:#12262B;--moss:#2F6B4F;--moss-t:#D5E7DC;--fire:#E8891C;--fire-t:#FCE5C6;--line:#CBD8D0;--on-dark:#EAF2EC;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0C1B1F;--surface:#14292F;--ink:#E8F0EA;--muted:#9DB2AA;--moss:#7CC39A;--moss-t:#1C3A30;--fire-t:#3A2A12;--line:#26414A;--pine:#081417}}
+:root[data-theme="dark"]{--bg:#0C1B1F;--surface:#14292F;--ink:#E8F0EA;--muted:#9DB2AA;--moss:#7CC39A;--moss-t:#1C3A30;--fire-t:#3A2A12;--line:#26414A;--pine:#081417}
+html{scroll-padding-top:calc(64px + env(safe-area-inset-top,0px));scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 "Be Vietnam Pro",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque","Be Vietnam Pro",sans-serif;line-height:1.1;margin:0}
+a{color:inherit}
+.w{max-width:1080px;margin:0 auto;padding:0 20px}
+:focus-visible{outline:3px solid var(--fire);outline-offset:2px}
+header{position:sticky;top:0;z-index:5;background:var(--pine);color:var(--on-dark)}
+header .w{display:flex;align-items:center;gap:16px;height:64px}
+.logo{font:800 24px "Bricolage Grotesque",sans-serif;text-decoration:none;margin-right:auto}
+.logo b{color:var(--fire)}
+nav{display:flex;gap:18px;font-size:14px}
+nav a{text-decoration:none;opacity:.85}nav a:hover{opacity:1}
+select.lang{background:transparent;color:inherit;border:1px solid #3b5a60;border-radius:8px;padding:6px 8px;font:inherit;font-size:13px}
+select.lang option{color:#12262B}
+.btn{display:inline-block;border:0;border-radius:999px;padding:12px 24px;font:600 15px "Be Vietnam Pro",sans-serif;cursor:pointer;text-decoration:none;background:var(--fire);color:#1b1205}
+.btn.t{background:var(--moss-t);color:var(--ink)}
+.btn:hover{filter:brightness(1.07)}
+@media(max-width:760px){nav{display:none}}
+.hero{background:var(--pine);color:var(--on-dark);padding:64px 0 72px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-120px;bottom:-160px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(232,137,28,.35),transparent 65%)}
+.hero .w{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;position:relative;z-index:1}
+@media(max-width:820px){.hero .w{grid-template-columns:1fr}}
+.hero h1{font-size:clamp(38px,6vw,64px);font-weight:800}
+.hero p{max-width:46ch;color:#B9CCC3;margin:18px 0 28px}
+.cipher{background:#0c1d21;border:1px solid #2c4a50;border-radius:20px;padding:24px}
+.cipher small{color:#9DB2AA}
+.code{font:800 34px "Bricolage Grotesque",sans-serif;letter-spacing:.14em;color:var(--fire);margin:6px 0 14px;word-break:break-all}
+.cipher input{width:100%;padding:12px 14px;border-radius:12px;border:1px solid #3b5a60;background:#12262B;color:#EAF2EC;font:inherit;letter-spacing:.1em;text-transform:uppercase}
+.cipher .row{display:flex;gap:10px}
+#cres{min-height:24px;margin:12px 0 0;font-size:14px}
+.quick{background:var(--surface);border-bottom:1px solid var(--line)}
+.quick .w{display:flex;flex-wrap:wrap;gap:8px 24px;padding-top:14px;padding-bottom:14px;font-size:14px;font-weight:500}
+.quick a{text-decoration:none;color:var(--moss)}
+section{padding:72px 0}
+h2{font-size:clamp(28px,4vw,40px);font-weight:700;margin-bottom:12px}
+.lead{color:var(--muted);max-width:60ch;margin:0 0 36px}
+.levels{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:900px){.levels{grid-template-columns:1fr}}
+.lv{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:28px;display:flex;flex-direction:column}
+.lv.l1{border-radius:24px 24px 24px 4px}.lv.l2{border-top:6px solid var(--moss)}
+.lv.l3{background:var(--pine);color:var(--on-dark);border-color:var(--pine);border-radius:4px 24px 24px 24px}
+.lv.l3 .muted{color:#9DB2AA}.lv.l3 li{border-color:#2c4a50}
+.tag{display:inline-block;font-size:13px;font-weight:600;padding:3px 12px;border-radius:999px;background:var(--moss-t);color:var(--ink);align-self:flex-start}
+.l3 .tag{background:var(--fire);color:#1b1205}
+.lv h3{font-size:30px;margin:14px 0 4px}
+.muted{color:var(--muted);font-size:14px}
+.meter{display:flex;gap:4px;margin:14px 0}
+.meter i{flex:1;height:8px;border-radius:4px;background:var(--line)}
+.meter i.on{background:var(--fire)}
+.lv ul{list-style:none;padding:0;margin:8px 0 20px}
+.lv li{padding:8px 0;border-bottom:1px solid var(--line);font-size:15px}
+.price{font:800 28px "Bricolage Grotesque",sans-serif;margin-top:auto}
+.price span{font:400 13px "Be Vietnam Pro";opacity:.7}
+.lv .btn{margin-top:14px;text-align:center}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.chip{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:8px 18px;font:500 14px "Be Vietnam Pro";cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--moss);border-color:var(--moss);color:#fff}
+.dep{display:grid;grid-template-columns:90px 1fr auto;gap:16px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px 18px;margin-bottom:10px}
+.dep .d{font:700 22px "Bricolage Grotesque";color:var(--moss)}
+.dep em{font-style:normal;font-size:13px;color:var(--muted);display:block}
+@media(max-width:560px){.dep{grid-template-columns:70px 1fr}.dep .btn{grid-column:1/-1;text-align:center}}
+.alt{background:var(--surface);border-block:1px solid var(--line)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:820px){.grid3{grid-template-columns:1fr}}
+.card{background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:22px}
+.card h3{font-size:20px;margin-bottom:6px}.card p{margin:0;color:var(--muted);font-size:15px}
+.steps{counter-reset:s;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:0;list-style:none}
+@media(max-width:820px){.steps{grid-template-columns:1fr 1fr}}
+.steps li{counter-increment:s;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px}
+.steps li:before{content:counter(s);display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--fire);color:#1b1205;font-weight:700;margin-bottom:10px}
+.steps b{display:block}.steps span{font-size:14px;color:var(--muted)}
+form{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:720px}
+form .full{grid-column:1/-1}
+label{font-size:14px;font-weight:600;display:grid;gap:6px}
+input,select,textarea{font:inherit;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--surface);color:var(--ink);width:100%}
+@media(max-width:560px){form{grid-template-columns:1fr}}
+#fmsg{padding:14px 18px;border-radius:12px;background:var(--moss-t);display:none;max-width:720px;margin-top:14px}
+details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin-bottom:10px}
+summary{font-weight:600;cursor:pointer}
+details p{margin:10px 0 0;color:var(--muted)}
+footer{background:var(--pine);color:#B9CCC3;padding:48px 0 32px;font-size:14px}
+footer .w{display:grid;grid-template-columns:2fr 1fr 1fr;gap:28px}
+@media(max-width:700px){footer .w{grid-template-columns:1fr}}
+footer h4{color:var(--on-dark);margin:0 0 8px;font-size:15px}
+footer a{display:block;text-decoration:none;padding:2px 0}
+.nl{display:flex;gap:8px;margin-top:12px}.nl input{background:#12262B;border-color:#2c4a50;color:#EAF2EC}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header><div class="w">
+<a class="logo" href="#top">Bo<b>six</b></a>
+<nav><a href="#cap-do">3 cấp độ</a><a href="#lich">Lịch khởi hành</a><a href="#doanh-nghiep">Đoàn &amp; doanh nghiệp</a><a href="#an-toan">An toàn</a><a href="#faq">Hỏi đáp</a></nav>
+<select class="lang" aria-label="Ngôn ngữ"><option>VI</option><option>EN</option><option>KO</option></select>
+<a class="btn" href="#dat-tour">Đặt chỗ</a>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="w">
+<div>
+<h1>Cắm trại một đêm. Giải mã cả khu rừng.</h1>
+<p>Bosix tổ chức tour cắm trại có cốt truyện: nhóm bạn đi qua các trạm đố, đọc bản đồ, tìm manh mối và mở khoá chặng cuối trước khi lửa trại tàn.</p>
+<a class="btn" href="#cap-do">Chọn cấp độ</a> <a class="btn t" href="#lich">Xem lịch đi</a>
+</div>
+<div class="cipher" aria-live="polite">
+<small>Thử một câu đố của Bosix. Mỗi chữ cái đã bị đẩy tới 3 vị trí. Hãy lùi lại để đọc.</small>
+<div class="code" id="code"></div>
+<div class="row"><input id="ans" placeholder="Gõ đáp án" aria-label="Đáp án" autocomplete="off"><button class="btn" id="chk">Mở khoá</button></div>
+<p id="cres"></p>
+<small>Gợi ý: thứ không thể thiếu khi cắm trại ban đêm.</small>
+</div></div></div>
+
+<div class="quick"><div class="w"><a href="#cap-do">3 cấp độ</a><a href="#lich">Lịch khởi hành</a><a href="#hanh-trinh">Một chuyến đi diễn ra thế nào</a><a href="#diem-den">Địa điểm</a><a href="#doanh-nghiep">Team building</a><a href="#faq">Hỏi đáp</a></div></div>
+
+<section id="cap-do"><div class="w">
+<h2>Ba cấp độ, chọn theo nhóm của bạn</h2>
+<p class="lead">Mỗi cấp độ là một sản phẩm riêng, có độ khó, thời gian và mức chuẩn bị khác nhau. Giá bên dưới là giá tham khảo mỗi người, đã gồm lều, bữa ăn và bộ đồ chơi giải đố.</p>
+<div class="levels">
+<article class="lv l1"><span class="tag">Cấp 1 · Khởi động</span><h3>Dấu Chân</h3><div class="muted">1 ngày 1 đêm · 2–12 người</div>
+<div class="meter" aria-label="Độ khó 1 trên 3"><i class="on"></i><i></i><i></i></div>
+<ul><li>Dành cho gia đình, người lần đầu cắm trại</li><li>5 trạm đố ban ngày, đi bộ dưới 4 km</li><li>Lều dựng sẵn, có hướng dẫn viên đi cùng</li><li>Câu đố về cây cỏ, bản đồ, tìm kho báu</li></ul>
+<div class="price">790.000đ <span>/ người</span></div><button class="btn t" data-pick="1">Chọn Dấu Chân</button></article>
+
+<article class="lv l2"><span class="tag">Cấp 2 · Thử sức</span><h3>Mật Mã</h3><div class="muted">2 ngày 1 đêm · 4–20 người</div>
+<div class="meter" aria-label="Độ khó 2 trên 3"><i class="on"></i><i class="on"></i><i></i></div>
+<ul><li>Dành cho nhóm bạn, đồng nghiệp, người thích suy luận</li><li>8 trạm đố logic, mật mã, la bàn và GPS</li><li>Cả nhóm tự dựng lều với hướng dẫn</li><li>Đội đấu đội, có bảng điểm trực tiếp</li></ul>
+<div class="price">1.490.000đ <span>/ người</span></div><button class="btn" data-pick="2">Chọn Mật Mã</button></article>
+
+<article class="lv l3"><span class="tag">Cấp 3 · Thử thách</span><h3>Bí Cảnh</h3><div class="muted">3 ngày 2 đêm · 4–16 người</div>
+<div class="meter" aria-label="Độ khó 3 trên 3"><i class="on"></i><i class="on"></i><i class="on"></i></div>
+<ul><li>Dành cho người đã quen đi rừng và thích thử thách</li><li>Trò chơi mật thất ngoài trời kéo dài xuyên đêm</li><li>Định hướng bằng bản đồ giấy, kỹ năng sinh tồn cơ bản</li><li>Chặng cuối chỉ mở khi đủ manh mối của cả 2 đêm</li></ul>
+<div class="price">2.890.000đ <span>/ người</span></div><button class="btn" data-pick="3">Chọn Bí Cảnh</button></article>
+</div></div></section>
+
+<section class="alt" id="hanh-trinh"><div class="w">
+<h2>Một chuyến Bosix diễn ra thế nào</h2>
+<p class="lead">Dù chọn cấp nào, hành trình cũng đi qua bốn bước.</p>
+<ol class="steps">
+<li><b>Nhận nhiệm vụ</b><span>Hướng dẫn viên phát bản đồ, phong thư và luật chơi.</span></li>
+<li><b>Đi qua các trạm</b><span>Mỗi trạm có một câu đố gắn với cảnh quan thật.</span></li>
+<li><b>Dựng trại, nấu ăn</b><span>Nghỉ ngơi, ăn tối và chia sẻ manh mối quanh lửa trại.</span></li>
+<li><b>Mở chặng cuối</b><span>Ghép manh mối, giải mã và nhận phần thưởng của đội.</span></li>
+</ol></div></section>
+
+<section id="lich"><div class="w">
+<h2>Lịch khởi hành sắp tới</h2>
+<p class="lead">Lọc theo cấp độ. Lịch dưới đây là ví dụ, Bosix sẽ xác nhận chỗ trống sau khi bạn gửi yêu cầu.</p>
+<div class="chips" role="group" aria-label="Lọc theo cấp độ"><button class="chip" aria-pressed="true" data-f="0">Tất cả</button><button class="chip" aria-pressed="false" data-f="1">Cấp 1</button><button class="chip" aria-pressed="false" data-f="2">Cấp 2</button><button class="chip" aria-pressed="false" data-f="3">Cấp 3</button></div>
+<div id="deps"></div>
+</div></section>
+
+<section class="alt" id="diem-den"><div class="w">
+<h2>Địa điểm cắm trại</h2>
+<p class="lead">Bosix chọn khu vực có địa hình đa dạng, dễ đi từ TP.HCM và có đơn vị cứu hộ địa phương hỗ trợ.</p>
+<div class="grid3">
+<div class="card"><h3>Đà Lạt – Lâm Đồng</h3><p>Đồi thông, rừng sương sớm, khí hậu mát. Hợp Cấp 1 và Cấp 2.</p></div>
+<div class="card"><h3>Tà Đùng – Đắk Nông</h3><p>Hồ nhiều đảo, đường mòn ven rừng. Hợp Cấp 2.</p></div>
+<div class="card"><h3>Cát Tiên – Đồng Nai</h3><p>Rừng nguyên sinh, đêm nhiều âm thanh thiên nhiên. Hợp Cấp 3.</p></div>
+</div></div></section>
+
+<section id="doanh-nghiep"><div class="w">
+<h2>Team building cho đoàn và doanh nghiệp</h2>
+<p class="lead">Bosix thiết kế riêng nội dung đố theo mục tiêu của đoàn: gắn kết, giao tiếp, ra quyết định dưới áp lực.</p>
+<div class="grid3">
+<div class="card"><h3>Đoàn từ 20 người</h3><p>Chia đội, có điều phối viên cho mỗi 8 người, báo cáo kết quả sau chuyến đi.</p></div>
+<div class="card"><h3>Câu đố theo thương hiệu</h3><p>Lồng sản phẩm, giá trị cốt lõi của công ty vào cốt truyện.</p></div>
+<div class="card"><h3>Báo giá trong 24 giờ</h3><p>Gửi số người, ngân sách và ngày dự kiến ở phần đặt chỗ bên dưới.</p></div>
+</div></div></section>
+
+<section class="alt" id="an-toan"><div class="w">
+<h2>An toàn và cắm trại có trách nhiệm</h2>
+<p class="lead">Giải đố vui hơn khi mọi người đều an toàn.</p>
+<div class="grid3">
+<div class="card"><h3>Hướng dẫn viên được đào tạo</h3><p>Có chứng chỉ sơ cứu, liên lạc được với cứu hộ địa phương trong suốt chuyến đi.</p></div>
+<div class="card"><h3>Bảo hiểm du lịch</h3><p>Mỗi khách đều được mua bảo hiểm cho thời gian tham gia tour.</p></div>
+<div class="card"><h3>Không để lại rác</h3><p>Mỗi nhóm nhận túi rác riêng. Bosix mang toàn bộ rác về điểm xử lý.</p></div>
+</div></div></section>
+
+<section id="dat-tour"><div class="w">
+<h2>Gửi yêu cầu đặt chỗ</h2>
+<p class="lead">Điền thông tin, Bosix sẽ liên hệ xác nhận chỗ và hướng dẫn thanh toán.</p>
+<form id="f">
+<label>Họ và tên<input required name="n" autocomplete="name"></label>
+<label>Số điện thoại<input required name="p" type="tel" autocomplete="tel"></label>
+<label>Cấp độ<select id="lvsel"><option value="1">Cấp 1 – Dấu Chân</option><option value="2">Cấp 2 – Mật Mã</option><option value="3">Cấp 3 – Bí Cảnh</option></select></label>
+<label>Số người<input required type="number" min="2" max="40" value="4"></label>
+<label class="full">Ghi chú (ngày mong muốn, nhu cầu ăn uống…)<textarea rows="3"></textarea></label>
+<div class="full"><button class="btn" type="submit">Gửi yêu cầu</button></div>
+</form>
+<div id="fmsg" role="status"></div>
+</div></section>
+
+<section class="alt" id="faq"><div class="w">
+<h2>Hỏi đáp</h2>
+<details><summary>Tôi chưa từng cắm trại, nên chọn cấp nào?</summary><p>Chọn Cấp 1. Lều đã dựng sẵn và hướng dẫn viên đi cùng cả hành trình.</p></details>
+<details><summary>Tour có đi khi trời mưa không?</summary><p>Có thể dời lịch hoặc đổi sang phương án an toàn hơn. Bosix thông báo ít nhất 24 giờ trước giờ khởi hành.</p></details>
+<details><summary>Trẻ em tham gia được không?</summary><p>Cấp 1 nhận trẻ từ 6 tuổi đi cùng người lớn. Cấp 2 và 3 dành cho người từ 16 tuổi.</p></details>
+<details><summary>Tôi cần mang gì?</summary><p>Quần áo phù hợp thời tiết, giày đi bộ và đồ cá nhân. Lều, túi ngủ và bộ đồ giải đố do Bosix cung cấp.</p></details>
+</div></section>
+</main>
+
+<footer><div class="w">
+<div><h4>Bosix</h4>Tour cắm trại giải đố cho nhóm bạn, gia đình và doanh nghiệp.
+<form class="nl" id="nl" style="display:flex;max-width:380px"><input type="email" required placeholder="Email nhận lịch mới" aria-label="Email"><button class="btn" type="submit">Đăng ký</button></form><div id="nlm"></div></div>
+<div><h4>Khám phá</h4><a href="#cap-do">3 cấp độ</a><a href="#lich">Lịch khởi hành</a><a href="#doanh-nghiep">Team building</a></div>
+<div><h4>Liên hệ</h4><a href="#dat-tour">Gửi yêu cầu đặt chỗ</a><span>TP. Hồ Chí Minh</span><a href="#faq">Chính sách &amp; hỏi đáp</a></div>
+</div></footer>
+
+<script>
+var $=function(s){return document.querySelector(s)};
+function enc(t,k){return t.replace(/[A-Z]/g,function(c){return String.fromCharCode((c.charCodeAt(0)-65+k)%26+65)})}
+$('#code').textContent=enc('LUATRAI',3);
+function chk(){var v=$('#ans').value.trim().toUpperCase().replace(/\s/g,'');var r=$('#cres');
+r.textContent=v==='LUATRAI'?'Chính xác. Nhập mã BOSIX10 khi đặt chỗ để được giảm 10%.':'Chưa đúng, hãy thử lại.';r.style.color=v==='LUATRAI'?'#7CC39A':'#F2B8A0'}
+$('#chk').onclick=chk;$('#ans').onkeydown=function(e){if(e.key==='Enter')chk()};
+
+var deps=[["10/10",1,"Đà Lạt",8],["17/10",2,"Tà Đùng",5],["24/10",3,"Cát Tiên",4],["07/11",1,"Đà Lạt",10],["14/11",2,"Đà Lạt",6],["05/12",3,"Cát Tiên",3]];
+var names={1:"Dấu Chân",2:"Mật Mã",3:"Bí Cảnh"};
+function render(f){var h='';deps.forEach(function(d){if(f&&d[1]!==f)return;
+h+='<div class="dep"><div class="d">'+d[0]+'</div><div><b>Cấp '+d[1]+' · '+names[d[1]]+'</b><em>'+d[2]+' · còn '+d[3]+' chỗ</em></div><button class="btn t" data-pick="'+d[1]+'">Đặt chỗ</button></div>'});
+$('#deps').innerHTML=h}
+render(0);
+document.querySelectorAll('.chip').forEach(function(c){c.onclick=function(){document.querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-pressed','false')});c.setAttribute('aria-pressed','true');render(+c.dataset.f)}});
+document.addEventListener('click',function(e){var b=e.target.closest('[data-pick]');if(!b)return;$('#lvsel').value=b.dataset.pick;$('#dat-tour').scrollIntoView()});
+$('#f').onsubmit=function(e){e.preventDefault();var m=$('#fmsg');m.style.display='block';m.textContent='Bosix đã nhận yêu cầu cho cấp '+$('#lvsel').value+' ('+names[$('#lvsel').value]+'). Chúng tôi sẽ liên hệ bạn sớm.';this.reset()};
+$('#nl').onsubmit=function(e){e.preventDefault();$('#nlm').textContent='Cảm ơn bạn đã đăng ký.';this.reset()};
+</script>
+</body>
+</html>
